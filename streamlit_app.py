@@ -54,6 +54,8 @@ def display_leaderboard(use_streamlit=True):
     
     # Streamlit mode
     import streamlit as st
+
+    st.set_page_config(layout="wide", page_title="DLAIE Leaderboard")
     
     st.title("🏆 2025 DLAIE Latent Flow Matching Leaderboard")
     
