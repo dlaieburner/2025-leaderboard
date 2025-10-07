@@ -2,5 +2,4 @@
 repo for 2025 leaderboard contest
 
 ---
-.
 
