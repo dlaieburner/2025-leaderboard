@@ -34,11 +34,17 @@ def display_leaderboard(use_streamlit=True):
 
     # Convert time_per_sample to milliseconds for better readability
     df_display['time_per_sample'] *= 1000
+
+    # Create actual rank column (1, 2, 3, etc.) based on overall_rank (which is the score)
+    df_display = df_display.sort_values('overall_rank')
+    df_display.insert(1, 'rank_position', range(1, len(df_display) + 1))
+
     
     # Rename columns for display
     df_display = df_display.rename(columns={
         'team': 'Team Name',
-        'overall_rank': 'Overall Rank ↓',
+        'overall_rank': 'Overall Score ↓',
+        'rank_position': 'Overall Rank ↓',
         'total_params': 'Total Params ↓',
         'time_per_sample': 'ms/Sample ↓',
         'mse': 'MSE ↓',
