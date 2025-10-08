@@ -20,10 +20,10 @@ import argparse
 
 def style_leaderboard(df_display):
     return df_display.style \
-        .set_properties(**{'background-color': '#1a472a'}, subset=['Total Params ↓', 'ms/Sample ↓']) \
-        .set_properties(**{'background-color': '#2d5a5a'}, subset=['MSE ↓', 'SSIM ↑']) \
-        .set_properties(**{'background-color': '#1e3a5f'}, subset=['Entropy ↓', 'KL Div ↓', 'Gen Confidence ↑']) \
-        .set_properties(**{'background-color': '#4a235a'}, subset=['Overall Score ↓', 'Overall Rank ↓'])
+        .set_properties(**{'background-color': '#c8e6c9'}, subset=['Total Params ↓', 'ms/Sample ↓']) \
+        .set_properties(**{'background-color': '#b3d9d9'}, subset=['MSE ↓', 'SSIM ↑']) \
+        .set_properties(**{'background-color': '#bbdefb'}, subset=['Entropy ↓', 'KL Div ↓', 'Gen Confidence ↑']) \
+        .set_properties(**{'background-color': '#d1c4e9'}, subset=['Overall Score ↓', 'Overall Rank ↓'])
 
 def display_leaderboard(use_streamlit=True):
     """Display leaderboard, optionally using Streamlit."""
