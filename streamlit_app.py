@@ -66,6 +66,16 @@ def display_leaderboard(use_streamlit=True):
     import streamlit as st
 
     st.set_page_config(layout="wide", page_title="DLAIE Leaderboard")
+
+    # Remove default padding
+    st.markdown("""
+        <style>
+        .block-container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        </style>
+        """, unsafe_allow_html=True)
     
     st.title("🏆 2025 DLAIE Latent Flow Matching Leaderboard")
     
