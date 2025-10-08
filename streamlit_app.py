@@ -18,8 +18,9 @@ from datetime import datetime
 import argparse
 
 def style_leaderboard(df):
-    return df.style.set_properties(**{'border-left': '3px solid #666'},
-                                   subset=['Total Params ↓', 'MSE ↓', 'Entropy ↓', 'Overall Score ↓'])
+    #return df.style.set_properties(**{'border-left': '3px solid #666'},
+    #                               subset=['Total Params ↓', 'MSE ↓', 'Entropy ↓', 'Overall Score ↓'])
+    return df.style.set_properties(**{'background-color': 'lightblue'}, subset=['MSE ↓'])
 
 
 def display_leaderboard(use_streamlit=True):
@@ -84,21 +85,6 @@ def display_leaderboard(use_streamlit=True):
     
     st.title("🏆 2025 DLAIE Latent Flow Matching Leaderboard")
     
-        # Add column separators with CSS
-    st.markdown("""
-        <style>
-        [data-testid="stDataFrame"] table th:nth-child(3),
-        [data-testid="stDataFrame"] table td:nth-child(3),
-        [data-testid="stDataFrame"] table th:nth-child(5),
-        [data-testid="stDataFrame"] table td:nth-child(5),
-        [data-testid="stDataFrame"] table th:nth-child(7),
-        [data-testid="stDataFrame"] table td:nth-child(7),
-        [data-testid="stDataFrame"] table th:nth-child(11),
-        [data-testid="stDataFrame"] table td:nth-child(11) {
-            border-left: 3px solid #666 !important;
-        }
-        </style>
-        """, unsafe_allow_html=True)
     # Get latest submission time from the data
     latest_update = pd.to_datetime(df['time_stamp']).max()
     st.caption(f"Last updated: {latest_update.strftime('%Y-%m-%d %H:%M')}")
@@ -107,6 +93,7 @@ def display_leaderboard(use_streamlit=True):
     
     st.dataframe(df_display, use_container_width=True, hide_index=True)
     
+
     return df_display
 
 if __name__ == "__main__":
