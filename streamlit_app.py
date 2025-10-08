@@ -18,14 +18,8 @@ from datetime import datetime
 import argparse
 
 def style_leaderboard(df_display):
-    #return df.style.set_properties(**{'border-left': '3px solid #666'},
-    #                               subset=['Total Params ↓', 'MSE ↓', 'Entropy ↓', 'Overall Score ↓'])
-    #df_disply =  df_display.style.set_properties(**{'background-color': 'lightblue'}, subset=['MSE ↓'])
-    # Add visual spacing between groups
-    df_display.insert(df_display.columns.get_loc('Total Params ↓'), '|', '')
-    df_display.insert(df_display.columns.get_loc('MSE ↓'), '||', '')
-    df_display.insert(df_display.columns.get_loc('Entropy ↓'), '|||', '')
-    df_display.insert(df_display.columns.get_loc('Overall Score ↓'), '||||', '')
+    df_display = df.style.set_properties(**{'border-left': '3px solid #666'}, subset=['Total Params ↓', 'MSE ↓', 'Entropy ↓', 'Overall Score ↓'])
+    df_disply =  df_display.style.set_properties(**{'background-color': 'darkgray'}, subset=['MSE ↓', 'SSIM ↑'])
     return df_display
 
 
