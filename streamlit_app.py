@@ -94,6 +94,11 @@ def display_leaderboard(use_streamlit=True):
     latest_update = pd.to_datetime(df['time_stamp']).max()
     st.caption(f"Last updated: {latest_update.strftime('%Y-%m-%d %H:%M')}")
 
+    # Format numeric columns to 4 decimal places
+    numeric_cols = ['ms/Sample ↓', 'MSE ↓', 'SSIM ↑', 'Entropy ↓', 'KL Div ↓', 'Gen Confidence ↑', 'Overall Score ↓']
+    for col in numeric_cols:
+        df_display[col] = df_display[col].apply(lambda x: f'{x:.4f}')
+
     df_display = style_leaderboard(df_display)
     
     st.dataframe(df_display, use_container_width=True, hide_index=True)
