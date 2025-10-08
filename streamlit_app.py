@@ -99,7 +99,6 @@ def display_leaderboard(use_streamlit=True):
     st.dataframe(df_display, use_container_width=True, hide_index=True,
                  column_config={col: st.column_config.NumberColumn(format="%.4f") for col in numeric_cols})
     
-    st.dataframe(df_display, use_container_width=True, hide_index=True)
     st.markdown("Powered by Dr. Hawley's [botograder](https://github.com/drscotthawley/botograder)")
 
     return df_display
