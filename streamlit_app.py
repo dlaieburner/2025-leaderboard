@@ -38,7 +38,7 @@ def display_leaderboard(use_streamlit=True):
     # Rename columns for display
     df_display = df_display.rename(columns={
         'team': 'Team Name',
-        'overall_rank': 'Overall Rank',
+        'overall_rank': 'Overall Rank ↓',
         'total_params': 'Total Params ↓',
         'time_per_sample': 'ms/Sample ↓',
         'mse': 'MSE ↓',
