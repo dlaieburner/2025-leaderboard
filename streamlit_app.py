@@ -20,10 +20,10 @@ import argparse
 
 def style_leaderboard(df_display):
     return df_display.style \
-        .set_properties(**{'background-color': '#4a7c59'}, subset=['Total Params ↓', 'ms/Sample ↓']) \
+        .set_properties(**{'background-color': '#4a7c59'}, subset=['Params ↓', 'ms/Sample ↓']) \
         .set_properties(**{'background-color': '#5b8a8a'}, subset=['MSE ↓', 'SSIM ↑']) \
-        .set_properties(**{'background-color': '#4a6fa5'}, subset=['Entropy ↓', 'KL Div ↓', 'Gen Confidence ↑']) \
-        .set_properties(**{'background-color': '#7b5a8a'}, subset=['Overall Score ↓', 'Overall Rank ↓'])
+        .set_properties(**{'background-color': '#4a6fa5'}, subset=['Entropy ↓', 'KL Div ↓', 'Confidence ↑']) \
+        .set_properties(**{'background-color': '#7b5a8a'}, subset=['Overall Score ↓', 'Rank ↓'])
 
 
 def display_leaderboard(use_streamlit=True):
@@ -53,14 +53,14 @@ def display_leaderboard(use_streamlit=True):
     df_display = df_display.rename(columns={
         'team': 'Team Name',
         'overall_rank': 'Overall Score ↓',
-        'rank_position': 'Overall Rank ↓',
-        'total_params': 'Total Params ↓',
+        'rank_position': 'Rank ↓',
+        'total_params': 'Params ↓',
         'time_per_sample': 'ms/Sample ↓',
         'mse': 'MSE ↓',
         'ssim': 'SSIM ↑',
         'entropy': 'Entropy ↓',
         'kl_div_classes': 'KL Div ↓',
-        'gen_confidence': 'Gen Confidence ↑'
+        'gen_confidence': 'Confidence ↑'
     })
 
     
