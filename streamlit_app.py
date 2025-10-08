@@ -86,7 +86,7 @@ def display_leaderboard(use_streamlit=True):
         """, unsafe_allow_html=True)
     
     st.title("🏆 2025 DLAIE Latent Flow Matching Leaderboard")
-    st.markdown("[Contest Page](https://github.com/DLAIE/2025-LeaderboardContest) | [Course Page](https://github.com/drscotthawley/DLAIE)")
+    st.markdown("[Contest Page](https://github.com/DLAIE/2025-LeaderboardContest) | [DLAIE Course Page](https://github.com/drscotthawley/DLAIE)")
 
     
     # Get latest submission time from the data
