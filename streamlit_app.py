@@ -34,7 +34,7 @@ def display_leaderboard(use_streamlit=True):
 
     # Create actual rank column (1, 2, 3, etc.) based on overall_rank (which is the score)
     df_display = df_display.sort_values('overall_rank')
-    df_display.insert(-1, 'rank_position', range(1, len(df_display) + 1))
+    df_display.insert(len(df_display.columns), 'rank_position', range(1, len(df_display) + 1))
 
     # Convert time_per_sample to milliseconds for better readability
     df_display['time_per_sample'] *= 1000
