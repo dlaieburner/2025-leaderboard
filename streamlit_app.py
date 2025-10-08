@@ -31,13 +31,16 @@ def display_leaderboard(use_streamlit=True):
         print("LEADERBOARD (Raw CSV columns)")
         print("="*100)
         print(df.to_string(index=False))
+
+    # Convert time_per_sample to milliseconds for better readability
+    df_display['time_per_sample'] *= 1000
     
     # Rename columns for display
     df_display = df_display.rename(columns={
         'team': 'Team Name',
         'overall_rank': 'Overall Rank',
         'total_params': 'Total Params ↓',
-        'time_per_sample': 'Time/Sample ↓',
+        'time_per_sample': 'ms/Sample ↓',
         'mse': 'MSE ↓',
         'ssim': 'SSIM ↑',
         'entropy': 'Entropy ↓',
