@@ -105,9 +105,9 @@ def display_leaderboard(use_streamlit=True):
     st.markdown("### With prizes from:")
     cols = st.columns(3)
     with cols[0]:
-        st.markdown('<img src="https://raw.githubusercontent.com/dlaieburner/2025-leaderboard/refs/heads/main/bdaic_logo.png" height="100">', unsafe_allow_html=True)
+        st.markdown('<img src="https://raw.githubusercontent.com/dlaieburner/2025-leaderboard/refs/heads/main/bdaic_logo.png" height="80">', unsafe_allow_html=True)
     with cols[1]:
-        st.markdown('<img src="https://raw.githubusercontent.com/dlaieburner/2025-leaderboard/refs/heads/main/wandb_logo.png" height="100">', unsafe_allow_html=True)
+        st.markdown('<img src="https://raw.githubusercontent.com/dlaieburner/2025-leaderboard/refs/heads/main/wandb_logo.png" height="120">', unsafe_allow_html=True)
     with cols[2]:
         st.markdown('<img src="https://raw.githubusercontent.com/dlaieburner/2025-leaderboard/refs/heads/main/coreweave_logo.jpg" height="100">', unsafe_allow_html=True)
 
