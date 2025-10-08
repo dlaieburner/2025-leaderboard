@@ -18,9 +18,11 @@ from datetime import datetime
 import argparse
 
 def style_leaderboard(df_display):
-    df_display = df_display.style.set_properties(**{'border-left': '3px solid #666'}, subset=['Total Params ↓', 'MSE ↓', 'Entropy ↓', 'Overall Score ↓'])
-    df_disply =  df_display.style.set_properties(**{'background-color': 'darkgray'}, subset=['MSE ↓', 'SSIM ↑'])
-    return df_display
+    return df_display.style \
+        .set_properties(**{'border-left': '3px solid #666'},
+                       subset=['Total Params ↓', 'MSE ↓', 'Entropy ↓', 'Overall Score ↓']) \
+        .set_properties(**{'background-color': 'darkgray'},
+                       subset=['MSE ↓', 'SSIM ↑'])
 
 
 def display_leaderboard(use_streamlit=True):
