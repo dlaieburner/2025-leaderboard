@@ -32,12 +32,12 @@ def display_leaderboard(use_streamlit=True):
         print("="*100)
         print(df.to_string(index=False))
 
-    # Convert time_per_sample to milliseconds for better readability
-    df_display['time_per_sample'] *= 1000
-
     # Create actual rank column (1, 2, 3, etc.) based on overall_rank (which is the score)
     df_display = df_display.sort_values('overall_rank')
     df_display.insert(1, 'rank_position', range(1, len(df_display) + 1))
+
+    # Convert time_per_sample to milliseconds for better readability
+    df_display['time_per_sample'] *= 1000
 
     
     # Rename columns for display
@@ -53,6 +53,7 @@ def display_leaderboard(use_streamlit=True):
         'kl_div_classes': 'KL Div ↓',
         'gen_confidence': 'Gen Confidence ↑'
     })
+
     
     if not use_streamlit:
         print("\n" + "="*100)
