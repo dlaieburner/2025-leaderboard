@@ -21,8 +21,8 @@ import argparse
 def style_leaderboard(df_display):
     return df_display.style \
         .set_properties(**{'background-color': '#1a472a'}, subset=['Total Params ↓', 'ms/Sample ↓']) \
-        .set_properties(**{'background-color': '#2c3e50'}, subset=['MSE ↓', 'SSIM ↑']) \
-        .set_properties(**{'background-color': '#34495e'}, subset=['Entropy ↓', 'KL Div ↓', 'Gen Confidence ↑']) \
+        .set_properties(**{'background-color': '#1e3a5f'}, subset=['MSE ↓', 'SSIM ↑']) \
+        .set_properties(**{'background-color': '#2d5a5a'}, subset=['Entropy ↓', 'KL Div ↓', 'Gen Confidence ↑']) \
         .set_properties(**{'background-color': '#4a235a'}, subset=['Overall Score ↓', 'Overall Rank ↓'])
 
 def display_leaderboard(use_streamlit=True):
