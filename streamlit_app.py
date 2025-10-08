@@ -17,6 +17,11 @@ import pandas as pd
 from datetime import datetime
 import argparse
 
+def style_leaderboard(df):
+    return df.style.set_properties(**{'border-left': '3px solid #666'},
+                                   subset=['Total Params ↓', 'MSE ↓', 'Entropy ↓', 'Overall Score ↓'])
+
+
 def display_leaderboard(use_streamlit=True):
     """Display leaderboard, optionally using Streamlit."""
     
@@ -82,6 +87,8 @@ def display_leaderboard(use_streamlit=True):
     # Get latest submission time from the data
     latest_update = pd.to_datetime(df['time_stamp']).max()
     st.caption(f"Last updated: {latest_update.strftime('%Y-%m-%d %H:%M')}")
+
+    df_display = style_leaderboard(df_display)
     
     st.dataframe(df_display, use_container_width=True, hide_index=True)
     
