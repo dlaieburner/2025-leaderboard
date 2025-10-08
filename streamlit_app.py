@@ -86,6 +86,8 @@ def display_leaderboard(use_streamlit=True):
         """, unsafe_allow_html=True)
     
     st.title("🏆 2025 DLAIE Latent Flow Matching Leaderboard")
+    st.markdown("[Contest Page](https://github.com/DLAIE/2025-LeaderboardContest) | [Course Page](https://github.com/drscotthawley/DLAIE)")
+
     
     # Get latest submission time from the data
     latest_update = pd.to_datetime(df['time_stamp']).max()
@@ -94,6 +96,7 @@ def display_leaderboard(use_streamlit=True):
     df_display = style_leaderboard(df_display)
     
     st.dataframe(df_display, use_container_width=True, hide_index=True)
+    st.markdown("Powered by Dr. Hawley's [botograder](https://github.com/drscotthawley/botograder)")
 
     return df_display
 
