@@ -19,10 +19,14 @@ import argparse
 
 def style_leaderboard(df_display):
     return df_display.style \
-        .set_properties(**{'border-left': '3px solid #666'},
-                       subset=['Total Params ↓', 'MSE ↓', 'Entropy ↓', 'Overall Score ↓']) \
+        .set_properties(**{'background-color': 'darkgreen'},
+                       subset=['Total Params ↓', 'ms/Sample ↓']) \
         .set_properties(**{'background-color': 'darkgray'},
-                       subset=['MSE ↓', 'SSIM ↑'])
+                       subset=['MSE ↓', 'SSIM ↑']) \
+        .set_properties(**{'background-color': 'darkgoldenrod'},
+                       subset=['Entropy ↓', 'KL Div ↓', 'Gen Confidence ↑']) \
+        .set_properties(**{'background-color': 'darkslateblue'},
+                       subset=['Overall Score ↓', 'Overall Rank'])
 
 
 def display_leaderboard(use_streamlit=True):
