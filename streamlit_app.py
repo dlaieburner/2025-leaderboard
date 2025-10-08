@@ -17,10 +17,16 @@ import pandas as pd
 from datetime import datetime
 import argparse
 
-def style_leaderboard(df):
+def style_leaderboard(df_display):
     #return df.style.set_properties(**{'border-left': '3px solid #666'},
     #                               subset=['Total Params ↓', 'MSE ↓', 'Entropy ↓', 'Overall Score ↓'])
-    return df.style.set_properties(**{'background-color': 'lightblue'}, subset=['MSE ↓'])
+    #df_disply =  df_display.style.set_properties(**{'background-color': 'lightblue'}, subset=['MSE ↓'])
+    # Add visual spacing between groups
+    df_display.insert(df_display.columns.get_loc('Total Params ↓'), '|', '')
+    df_display.insert(df_display.columns.get_loc('MSE ↓'), '||', '')
+    df_display.insert(df_display.columns.get_loc('Entropy ↓'), '|||', '')
+    df_display.insert(df_display.columns.get_loc('Overall Score ↓'), '||||', '')
+    return df_display
 
 
 def display_leaderboard(use_streamlit=True):
@@ -91,8 +97,7 @@ def display_leaderboard(use_streamlit=True):
 
     df_display = style_leaderboard(df_display)
     
-    #st.dataframe(df_display, use_container_width=True, hide_index=True)
-    st.table(df_display)
+    st.dataframe(df_display, use_container_width=True, hide_index=True)
 
     return df_display
 
