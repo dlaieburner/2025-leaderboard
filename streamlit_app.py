@@ -40,7 +40,7 @@ def display_leaderboard(use_streamlit=True):
         'time_per_sample': 'Time/Sample ↓',
         'mse': 'MSE ↓',
         'ssim': 'SSIM ↑',
-        'entropy': 'Entropy ↑',
+        'entropy': 'Entropy ↓',
         'kl_div_classes': 'KL Div ↓',
         'gen_confidence': 'Gen Confidence ↑'
     })
