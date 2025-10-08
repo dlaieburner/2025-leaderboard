@@ -106,9 +106,9 @@ def display_leaderboard(use_streamlit=True):
 
     st.markdown('''
     <div style="display: flex; justify-content: space-between; align-items: center;">
-        <img src="https://raw.githubusercontent.com/dlaieburner/2025-leaderboard/refs/heads/main/bdaic_logo.png" height="100">
         <img src="https://raw.githubusercontent.com/dlaieburner/2025-leaderboard/refs/heads/main/wandb_logo.png" height="100">
         <img src="https://raw.githubusercontent.com/dlaieburner/2025-leaderboard/refs/heads/main/coreweave_logo.jpg" height="100">
+            <img src="https://raw.githubusercontent.com/dlaieburner/2025-leaderboard/refs/heads/main/bdaic_logo.png" height="100">
     </div>
     ''', unsafe_allow_html=True)
 
