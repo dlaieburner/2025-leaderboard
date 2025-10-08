@@ -91,8 +91,8 @@ def display_leaderboard(use_streamlit=True):
 
     df_display = style_leaderboard(df_display)
     
-    st.dataframe(df_display, use_container_width=True, hide_index=True)
-    
+    #st.dataframe(df_display, use_container_width=True, hide_index=True)
+    st.table(df_display)
 
     return df_display
 
