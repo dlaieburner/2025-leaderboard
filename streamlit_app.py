@@ -96,7 +96,7 @@ def display_leaderboard(use_streamlit=True):
 
     df_display = style_leaderboard(df_display)
     df_display = style_leaderboard(df_display)
-    numeric_cols = ['ms/Sample ↓', 'MSE ↓', 'SSIM ↑', 'Entropy ↓', 'KL Div ↓', 'Confidence ↑', 'Score ↓']
+    numeric_cols = ['ms/Sample ↓', 'MSE ↓', 'SSIM ↑', 'Entropy ↓', 'KL Div ↓', 'Confidence ↑', 'Overall Score ↓']
     st.dataframe(df_display, use_container_width=True, hide_index=True,
                  column_config={col: st.column_config.NumberColumn(format="%.4f") for col in numeric_cols})
     
