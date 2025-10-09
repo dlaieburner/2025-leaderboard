@@ -105,7 +105,6 @@ def display_leaderboard(use_streamlit=True):
     st.dataframe(df_display, use_container_width=True, hide_index=True,
                  column_config={col: st.column_config.NumberColumn(format="%.4f") for col in numeric_cols})
     
-    st.markdown("Powered by Dr. Hawley's [botograder](https://github.com/drscotthawley/botograder)")
 
     st.markdown("### Prizes from:")
 
@@ -116,6 +115,9 @@ def display_leaderboard(use_streamlit=True):
             <img src="https://raw.githubusercontent.com/dlaieburner/2025-leaderboard/refs/heads/main/bdaic_logo.png" height="100">
     </div>
     ''', unsafe_allow_html=True)
+
+    st.markdown("---")
+    st.markdown("Powered by Dr. Hawley's [botograder](https://github.com/drscotthawley/botograder)")
 
 
     return df_display
