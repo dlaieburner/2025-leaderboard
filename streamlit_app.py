@@ -116,7 +116,9 @@ def display_leaderboard(use_streamlit=True):
     </div>
     ''', unsafe_allow_html=True)
 
-    st.markdown("---")
+    #st.markdown("---")
+    st.markdown('')
+    st.markdown('')
     st.markdown("Powered by Dr. Hawley's [botograder](https://github.com/drscotthawley/botograder)")
 
 
