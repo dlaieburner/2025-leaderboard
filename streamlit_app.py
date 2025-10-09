@@ -119,7 +119,7 @@ def display_leaderboard(use_streamlit=True):
     #st.markdown("---")
     st.markdown('')
     st.markdown('')
-    st.markdown("Powered by Dr. Hawley's [botograder](https://github.com/drscotthawley/botograder)")
+    st.markdown("Powered by @drscotthawley/[botograder](https://github.com/drscotthawley/botograder)")
 
 
     return df_display
