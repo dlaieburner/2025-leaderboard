@@ -90,8 +90,8 @@ def display_leaderboard(use_streamlit=True):
     st.markdown('''
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
-            <a href="https://github.com/DLAIE/2025-LeaderboardContest">Contest Page</a> | 
-            <a href="https://github.com/drscotthawley/DLAIE">DLAIE Course Page</a>
+            <h3><a href="https://github.com/DLAIE/2025-LeaderboardContest">Contest Page</a> | 
+            <a href="https://github.com/drscotthawley/DLAIE">DLAIE Course Page</a></h3>
         </div>
         <img src="https://raw.githubusercontent.com/dlaieburner/2025-leaderboard/refs/heads/main/flow_anim_3d.gif" height="120">
     </div>
