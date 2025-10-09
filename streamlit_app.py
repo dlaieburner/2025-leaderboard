@@ -20,10 +20,10 @@ import argparse
 
 def style_leaderboard(df_display):
     return df_display.style \
-        .set_properties(**{'background-color': '#4a7c59'}, subset=['Params ↓', 'ms/Sample ↓']) \
-        .set_properties(**{'background-color': '#5b8a8a'}, subset=['MSE ↓', 'SSIM ↑']) \
-        .set_properties(**{'background-color': '#4a6fa5'}, subset=['Entropy ↓', 'KL Div ↓', 'Confidence ↑']) \
-        .set_properties(**{'background-color': '#7b5a8a'}, subset=['Overall Score ↓', 'Rank ↓'])
+        .set_properties(**{'background-color': '#2d5a3d'}, subset=['Params ↓', 'ms/Sample ↓']) \
+        .set_properties(**{'background-color': '#3d5a5a'}, subset=['MSE ↓', 'SSIM ↑']) \
+        .set_properties(**{'background-color': '#2d4a75'}, subset=['Entropy ↓', 'KL Div ↓', 'Confidence ↑']) \
+        .set_properties(**{'background-color': '#4d3a5a'}, subset=['Overall Score ↓', 'Rank ↓'])
 
 
 def display_leaderboard(use_streamlit=True):
@@ -136,3 +136,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     display_leaderboard(use_streamlit=not args.no_streamlit)
+
+
