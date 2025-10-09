@@ -87,9 +87,15 @@ def display_leaderboard(use_streamlit=True):
         """, unsafe_allow_html=True)
     
     st.title("🏆 2025 DLAIE Latent Flow Matching Leaderboard")
-    st.markdown("[Contest Page](https://github.com/DLAIE/2025-LeaderboardContest) | [DLAIE Course Page](https://github.com/drscotthawley/DLAIE)")
-
-    
+    st.markdown('''
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <a href="https://github.com/DLAIE/2025-LeaderboardContest">Contest Page</a> | 
+            <a href="https://github.com/drscotthawley/DLAIE">DLAIE Course Page</a>
+        </div>
+        <img src="https://raw.githubusercontent.com/dlaieburner/2025-leaderboard/refs/heads/main/flow_anim_3d.gif" height="120">
+    </div>
+    ''', unsafe_allow_html=True)
     # Get latest submission time from the data
     latest_update = pd.to_datetime(df['time_stamp']).max()
     st.caption(f"Last updated: {latest_update.strftime('%Y-%m-%d %H:%M')}")
@@ -101,8 +107,7 @@ def display_leaderboard(use_streamlit=True):
     
     st.markdown("Powered by Dr. Hawley's [botograder](https://github.com/drscotthawley/botograder)")
 
-    st.markdown("---")
-    st.markdown("### With prizes from:")
+    st.markdown("### Prizes from:")
 
     st.markdown('''
     <div style="display: flex; justify-content: space-between; align-items: center;">
