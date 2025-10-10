@@ -52,6 +52,7 @@ def display_leaderboard(use_streamlit=True):
     # Rename columns for display
     df_display = df_display.rename(columns={
         'team': 'Team Name',
+        'latent_shape': 'Latent Dim',
         'overall_rank': 'Overall Score ↓',
         'rank_position': 'Rank ↓',
         'total_params': 'Params ↓',
