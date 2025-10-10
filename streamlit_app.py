@@ -141,7 +141,7 @@ def display_leaderboard(use_streamlit=True):
         **<span style="background-color:#1e3a5f; padding:2px 8px;">  </span>&nbsp; Generated Sample Quality** (using pretrained ResNet classifier)
         - **Entropy ↓**: Classifier uncertainty (over all classes) on generated images (lower = more realistic)
         - **KL Div ↓**: Divergence between generated and real class distributions
-        - **Confidence ↑**: Classifier confidence (argmax) on generated samples
+        - **Confidence ↑**: Classifier confidence (max) on generated samples
         
         **<span style="background-color:#4a235a; padding:2px 8px;">  </span>&nbsp; Final Score** 
         - **Overall Score ↓**: Average rank across all metrics
