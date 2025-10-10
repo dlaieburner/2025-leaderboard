@@ -143,7 +143,7 @@ def display_leaderboard(use_streamlit=True):
         - **KL Div ↓**: Divergence between generated and real class distributions
         - **Confidence ↑**: Classifier confidence (max) on generated samples
 
-        **<span style="background-color:#4a235a; padding:2px 8px;">  </span>&nbsp; Final Score**
+        **<span style="background-color:#7a3d8a; padding:2px 8px;">  </span>&nbsp; Final Score**
         - **Overall Score ↓**: Average rank across all metrics
         - **Rank ↓**: Final leaderboard position
         """, unsafe_allow_html=True)
