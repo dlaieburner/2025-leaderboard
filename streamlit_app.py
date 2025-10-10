@@ -130,20 +130,20 @@ def display_leaderboard(use_streamlit=True):
     st.markdown("""
         ### 📊 Leaderboard Metrics
         
-        **<span style="background-color:#1a472a; padding:2px 8px;">  </span>&nbsp; Model Efficiency** (Green)
+        **<span style="background-color:#1a472a; padding:2px 8px;">  </span>&nbsp; Model Efficiency** 
         - **Params ↓**: Total parameters in VAE + Flow model
         - **ms/Sample ↓**: Generation time per sample in milliseconds
         
-        **<span style="background-color:#2d5a5a; padding:2px 8px;">  </span>&nbsp; VAE Reconstruction Quality** (Cyan/Teal)
+        **<span style="background-color:#2d5a5a; padding:2px 8px;">  </span>&nbsp; VAE Reconstruction Quality** 
         - **MSE ↓**: Mean squared error between original and reconstructed images
         - **SSIM ↑**: Structural similarity index (perceptual quality)
         
-        **<span style="background-color:#1e3a5f; padding:2px 8px;">  </span>&nbsp; Generated Sample Quality** (Dark Blue)
+        **<span style="background-color:#1e3a5f; padding:2px 8px;">  </span>&nbsp; Generated Sample Quality** (using pretrained ResNet classifier)
         - **Entropy ↓**: Classifier uncertainty on generated images (lower = more realistic)
         - **KL Div ↓**: Divergence between generated and real class distributions
         - **Confidence ↑**: Classifier confidence on generated samples
         
-        **<span style="background-color:#4a235a; padding:2px 8px;">  </span>&nbsp; Final Score** (Purple)
+        **<span style="background-color:#4a235a; padding:2px 8px;">  </span>&nbsp; Final Score** 
         - **Overall Score ↓**: Average rank across all metrics
         - **Rank ↓**: Final leaderboard position
         """, unsafe_allow_html=True)
