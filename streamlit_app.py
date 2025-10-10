@@ -127,6 +127,26 @@ def display_leaderboard(use_streamlit=True):
     st.markdown('')
     st.markdown("Powered by @drscotthawley/[botograder](https://github.com/drscotthawley/botograder)")
 
+    st.markdown("""
+        ### 📊 Leaderboard Metrics
+        
+        **<span style="color:#1a472a">⬛</span> Model Efficiency** (Green)
+        - **Params ↓**: Total parameters in VAE + Flow model
+        - **ms/Sample ↓**: Generation time per sample in milliseconds
+        
+        **<span style="color:#2d5a5a">⬛</span> VAE Reconstruction Quality** (Cyan/Teal)
+        - **MSE ↓**: Mean squared error between original and reconstructed images
+        - **SSIM ↑**: Structural similarity index (perceptual quality)
+        
+        **<span style="color:#1e3a5f">⬛</span> Generated Sample Quality** (Dark Blue)
+        - **Entropy ↓**: Classifier uncertainty on generated images (lower = more realistic)
+        - **KL Div ↓**: Divergence between generated and real class distributions
+        - **Confidence ↑**: Classifier confidence on generated samples
+        
+        **<span style="color:#4a235a">⬛</span> Final Score** (Purple)
+        - **Overall Score ↓**: Average rank across all metrics
+        - **Rank ↓**: Final leaderboard position
+        """, unsafe_allow_html=True)
 
     return df_display
 
