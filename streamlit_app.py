@@ -130,15 +130,15 @@ def display_leaderboard(use_streamlit=True):
     st.markdown("""
         ### 📊 Leaderboard Metrics
 
-        **<span style="background-color:#236f3e; padding:2px 8px;">  </span>&nbsp; Model Efficiency**
+        **<span style="background-color:#2d7a4d; padding:2px 8px;">  </span>&nbsp; Model Efficiency**
         - **Params ↓**: Total parameters in VAE + Flow model
         - **ms/Sample ↓**: Generation time per sample in milliseconds
 
-        **<span style="background-color:#297272; padding:2px 8px;">  </span>&nbsp; VAE Reconstruction Quality**
+        **<span style="background-color:#4d8a8a; padding:2px 8px;">  </span>&nbsp; VAE Reconstruction Quality**
         - **MSE ↓**: Mean squared error between original and reconstructed images
         - **SSIM ↑**: Structural similarity index (perceptual quality)
 
-        **<span style="background-color:#1a3e6d; padding:2px 8px;">  </span>&nbsp; Generated Sample Quality** (using pretrained ResNet classifier)
+        **<span style="background-color:#3d5a8f; padding:2px 8px;">  </span>&nbsp; Generated Sample Quality** (using pretrained ResNet classifier)
         - **Entropy ↓**: Classifier uncertainty (over all classes) on generated images (lower = more realistic)
         - **KL Div ↓**: Divergence between generated and real class distributions
         - **Confidence ↑**: Classifier confidence (max) on generated samples
