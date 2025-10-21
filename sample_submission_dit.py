@@ -520,8 +520,8 @@ class SubmissionInterface(nn.Module):
         import gdown 
         #--- REQUIRED INFO:
         self.info = {
-            'team': 'sample3',  # REPLACE with your team name. This will be public
-            'names': 'Your Name(s) Here', # or single name. This will be kept private
+            'team': 'sample-dit',  # REPLACE with your team name. This will be public
+            'names': 'Dr. Hawley', # or single name. This will be kept private
         }
         #----
 
