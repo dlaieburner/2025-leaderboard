@@ -36,44 +36,8 @@ import gdown
 from safetensors.torch import load_file
 
 # Adjust to whichever platform we're running on
-
 platform = 'local'
 dir_prefix = './'
-
-if  os.path.exists('/content'): # hacky but effective
-    platform = 'colab'
-    print("On colab, mounting GDrive")
-    from google.colab import drive
-    drive.mount('/content/drive')
-    dir_prefix = '/content/drive/MyDrive/'
-elif os.path.exists('/app/data'):
-    platform = 'solveit'
-    dir_prefix = '/app/data/'
-    print("On solveit, replacing tqdm")
-    try:  # tqdm needs replacing on solveit
-        from dialoghelper import *
-        import time
-        def sitqdm(iterable, desc="Progress", total=None, mininterval=0.5, **kwargs):
-            from tqdm import tqdm as _tqdm
-            total = total if total is not None else len(iterable)
-            m = add_msg(f'{desc}: 0/{total} [{"░" * 20}] 0%')
-            pbar = _tqdm(iterable, desc=desc, total=total, mininterval=mininterval, file=open('/dev/null', 'w'), **kwargs)
-            last_update = time.time()
-            for item in pbar:
-                if time.time() - last_update >= mininterval or pbar.n == pbar.total:
-                    progress = f"{pbar.desc}: {pbar.n}/{pbar.total} [{'█' * (pbar.n*20//pbar.total)}{'░' * (20-pbar.n*20//pbar.total)}] {pbar.n*100//pbar.total}%"
-                    msg_replace_lines(msgid=m, start_line=1, end_line=1, new_content=progress)
-                    last_update = time.time()
-                yield item
-            progress = f"{pbar.desc}: {pbar.total}/{pbar.total} [{'█' * 20}] 100%" # Final update to ensure 100% is shown
-            msg_replace_lines(msgid=m, start_line=1, end_line=1, new_content=progress)
-        print("On solveit: replacing tqdm with sitqdm")
-        tqdm = sitqdm  # on solveit, replace tqdm with sitqdm
-    except:
-        pass
-
-"""Note that Solve-it only natively supports CPU, thus this is mostly for debugging. To run on GPUs, consider [Modal](https://modal.com/), e.g. via my [run_on()](https://share.solve.it.com/d/2c0aa332a79d08893c3e3f0e58c101e7) utility."""
-
 device = torch.device('cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu')
 print("device =",device)
 
