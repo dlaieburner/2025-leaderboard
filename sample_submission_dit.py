@@ -28,7 +28,6 @@ from torchvision.transforms import ToTensor, RandomAffine, RandomErasing
 import torchvision
 from tqdm.auto import tqdm
 import matplotlib
-matplotlib.use('Agg')  # tkinter can hang
 import matplotlib.pyplot as plt
 import torch.nn.functional as F
 import numpy as np
